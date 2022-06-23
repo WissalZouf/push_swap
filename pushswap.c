@@ -6,7 +6,7 @@
 /*   By: wzouf <wzouf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:23:02 by wzouf             #+#    #+#             */
-/*   Updated: 2022/06/17 21:21:38 by wzouf            ###   ########.fr       */
+/*   Updated: 2022/06/23 00:52:12 by wzouf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,4 +112,5 @@ int	main(int argc, char **argv)
 	stack.sorted_stack_index = 0;
 	stack.b = NULL;
 	ft_check_size(&stack);
+	ft_free_stack(&stack);
 }

@@ -6,7 +6,7 @@
 /*   By: wzouf <wzouf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:21:49 by wzouf             #+#    #+#             */
-/*   Updated: 2022/06/17 21:20:09 by wzouf            ###   ########.fr       */
+/*   Updated: 2022/06/17 21:50:18 by wzouf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	ft_ss(t_stack *tmp)
 	ft_sb(tmp);
 	if (tmp->msg_status == 1 && !tmp->checker)
 		write(1, "ss\n", 3);
-	// tmp->msg_status = 0;
 }
 
 void	ft_pa(t_stack *tmp)

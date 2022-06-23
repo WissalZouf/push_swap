@@ -6,7 +6,7 @@
 #    By: wzouf <wzouf@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/04 19:38:33 by wzouf             #+#    #+#              #
-#    Updated: 2022/06/17 21:32:42 by wzouf            ###   ########.fr        #
+#    Updated: 2022/06/23 00:50:47 by wzouf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCM =	utils.c  \
 		free_data.c \
 		create_list.c \
 		small_stack.c \
+		remove_leaks.c \
 		
 	
 SRCB =  checker.c \
@@ -39,6 +40,8 @@ SRCB =  checker.c \
 		create_list.c \
 		small_stack.c \
 		ft_checkerutils.c \
+		checker_utils.c \
+		remove_leaks.c \
 		
 NAME= push_swap
 
@@ -51,9 +54,13 @@ $(NAME) : $(SRCM) push_swap.h
 $(NAMEB) : $(SRCB) push_swap.h
 	gcc $(CFLAGS) $(SRCB) -o $(NAMEB)
 
+
 all : $(NAME)
 
 bonus : $(NAMEB)
+
+norm:
+	norminette $(SRCM) $(SRCB) push_swap.h
 
 clean :
 

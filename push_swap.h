@@ -6,7 +6,7 @@
 /*   By: wzouf <wzouf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:22:52 by wzouf             #+#    #+#             */
-/*   Updated: 2022/06/14 21:07:21 by wzouf            ###   ########.fr       */
+/*   Updated: 2022/06/23 00:44:31 by wzouf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_stack
 }	t_stack;
 
 t_list	*ft_lstnew(int content);
+void	ft_free_stack(t_stack *stack);
 int		from_a_to_b(t_stack *tmp, t_list *node);
 void	from_b_to_a(t_stack *tmp);
 int		chunk_fill(t_stack *tmp);
@@ -88,5 +89,9 @@ int		ft_check(t_stack *stack);
 void	free_tab_2d(char **str);
 void	create_list(t_stack *stack, char **argv);
 void	free_list(t_stack *stack);
+void	ft_check_args(int argc, char **argv, t_stack stack);
+void	ft_readline(t_stack stack);
+char	*ft_strjoin(char *s1, char *s2);
+void	ft_bzero(void *b, size_t n);
 
 #endif

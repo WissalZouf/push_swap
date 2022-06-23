@@ -1,29 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkerutils.c                                  :+:      :+:    :+:   */
+/*   remove_leaks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wzouf <wzouf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 16:20:35 by wzouf             #+#    #+#             */
-/*   Updated: 2022/06/23 02:39:14 by wzouf            ###   ########.fr       */
+/*   Created: 2022/06/23 00:48:25 by wzouf             #+#    #+#             */
+/*   Updated: 2022/06/23 01:41:05 by wzouf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_free_tab_2d(char **str)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	if (s1 && s2)
+	while (str[i])
 	{
-		while (s1[i] && s2[i] && s1[i] == s2[i])
-		{
-			i++;
-		}
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		free(str[i]);
+		i++;
 	}
-	return 0;
+	free(str);
+	str = NULL;
+}
+
+void	ft_free_list(t_list *a)
+{
+	t_list *tmp;
+
+	if (a)
+	{
+		while (a->next)
+		{
+			tmp = a;
+			a = a->next;
+			free(tmp);
+		}
+	}
+}
+
+void	ft_free_stack(t_stack *stack)
+{
+	if (stack->tab)
+		free(stack->tab);
+	if (stack->chunk)
+		free(stack->chunk);
+	ft_free_list(stack->a);
+	ft_free_list(stack->b);
 }

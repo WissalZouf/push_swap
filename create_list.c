@@ -6,7 +6,7 @@
 /*   By: wzouf <wzouf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 17:03:39 by wzouf             #+#    #+#             */
-/*   Updated: 2022/05/28 19:49:18 by wzouf            ###   ########.fr       */
+/*   Updated: 2022/06/23 00:46:17 by wzouf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static	void	ft_test(t_stack *stack, char *str)
 	}
 	else
 	{
+		ft_free_stack(stack);
 		write(1, "Error\n", 6);
 		exit(1);
 	}
